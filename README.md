@@ -44,3 +44,22 @@ Before running the project, ensure that you have the following tools installed:
 ### 1. Create a Google Cloud Project and BigQuery Dataset
 1. Set up a Google Cloud project and enable BigQuery.
 2. Create a BigQuery dataset and table to store the scraped data.
+
+### 2. Configure Google Cloud credentials
+Ensure that the service account credentials file is properly configured with BigQuery permissions and placed in the config/ folder.
+
+### 3. Docker Setup and Run
+4.1. Build the Docker Image
+You can build the Docker image using the following command:
+
+```bash
+docker build -t scraping-news-image .
+```
+
+4.2. Run the Docker Image Locally
+You can test the Docker container locally before deploying it to Cloud Run:
+
+
+```bash
+docker run -p 8080:8080 scraping-news-image
+```
