@@ -32,13 +32,13 @@ RUN GECKODRIVER_VERSION=0.30.0 \
 COPY . /app
 
 # credenciales en local
-COPY ./config/challenge-435921-1d9158e1ebff.json /app/config/challenge-435921-1d9158e1ebff.json
+COPY ./config/your-credential.json /app/config/your-credential.json
 
 # Instalar las dependencias desde el archivo requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Definir la variable de entorno para Google Cloud (local)
-ENV GOOGLE_APPLICATION_CREDENTIALS="/app/config/challenge-435921-1d9158e1ebff.json"
+ENV GOOGLE_APPLICATION_CREDENTIALS="/app/config/your-credential.json"
 
 # Establecer la ruta de Geckodriver y Firefox
 ENV PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
