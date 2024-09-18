@@ -27,7 +27,7 @@ def run_scraping():
 
     driver.get("https://www.yogonet.com/international/")
 
-    # Esperar hasta que los artículos sean visibles (espera explícita)
+    # Esperar hasta que los artículos sean visibles.
     try:
         articles = WebDriverWait(driver, 10).until(
             EC.presence_of_all_elements_located((By.CSS_SELECTOR, ".slot.slot_1.noticia.cargada"))
@@ -38,7 +38,6 @@ def run_scraping():
 
     news_data = []
 
-    # Iterar sobre los artículos y extraer datos
     for article in articles:
         try:
             # Extraer el título

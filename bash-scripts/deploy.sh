@@ -50,6 +50,4 @@ gcloud run deploy $SERVICE_NAME \
     --set-env-vars GOOGLE_APPLICATION_CREDENTIALS="$CREDENTIALS_PATH" \
     --allow-unauthenticated
 
-echo "Credenciales de Google configuradas en: $GOOGLE_APPLICATION_CREDENTIALS"
-
 echo "Despliegue completado. Verifica el estado del servicio en Google Cloud Run."

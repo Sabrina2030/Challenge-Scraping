@@ -1,3 +1,5 @@
+""" Funcion que procesa la informacion y crea las metricas necesarias """
+
 def process_data(df):
     # Contar el número de palabras en el título
     df['word_count'] = df['title'].apply(lambda x: len(x.split()))

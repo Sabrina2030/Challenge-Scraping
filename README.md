@@ -122,5 +122,5 @@ Automates Docker build, image push to Google Container Registry, and deployment 
 
 ## Additional Information
 - Docker Image: The project is fully Dockerized for easy deployment. Ensure that Docker is properly installed and configured on your system.
-- Google Cloud Run Deployment: The service can be deployed on Google Cloud Run with scalable memory and CPU options.
 - Service Credentials: Ensure the correct setup of your Google Cloud credentials to allow BigQuery integration.
+- A .dockerignore is added to ignore what we do not want to be uploaded to the docker image and a .gitignore that ignores GCP credentials
