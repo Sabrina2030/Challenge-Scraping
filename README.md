@@ -49,11 +49,7 @@ Before running the project, ensure that you have the following tools installed:
 Ensure that the service account credentials file is properly configured with BigQuery permissions and placed in the config/ folder.
 
 ### 3. Set the Credentials Path
-In the `Dockerfile`, you must add an environment variable that points to the path of your Google Cloud service account credentials.
-
-```dockerfile
-ENV GOOGLE_APPLICATION_CREDENTIALS="/app/config/challenge-435921-1d9158e1ebff.json"
-```
+In the `Dockerfile`, you will find a placeholder `your-credentials.json`. You must replace this with the actual name of your Google Cloud service account credentials file.
 
 ### 4. Docker Setup and Run
 4.1. Build the Docker Image
@@ -74,7 +70,9 @@ docker run -p 8080:8080 scraping-news-image
 ### 5. Deployment
 The project includes a deploy.sh script to automate the deployment process to Google Cloud Run.
 
-5.1. Run the Deployment Script:
+5.1. You must replace `your-credentials.json` with the actual name of your Google Cloud service account credentials file.
+
+5.2. Run the Deployment Script:
 
 ```bash
 bash bash-scripts/deploy.sh
