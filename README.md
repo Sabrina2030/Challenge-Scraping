@@ -67,6 +67,11 @@ You can test the Docker container locally before deploying it to Cloud Run:
 docker run -p 8080:8080 scraping-news-image
 ```
 
+4.3 Once up you can try this command:
+```bash
+curl http://127.0.0.1:8080
+```
+
 ### 5. Deployment
 The project includes a deploy.sh script to automate the deployment process to Google Cloud Run.
 
