@@ -27,8 +27,20 @@ CHALLENGE_DATA/
 ├── .dockerignore           # Docker ignore file
 ├── Dockerfile              # Docker image definition
 ├── requirements.txt        # Python dependencies
-
-
+```
 
 ## Requirements
 
+Before running the project, ensure that you have the following tools installed:
+
+- Python 3.8 or above
+- Docker
+- Google Cloud SDK
+- Google Cloud Project with BigQuery enabled
+- Service account JSON credentials with the proper BigQuery permissions
+
+## Setup Instructions
+
+### 1. Create a Google Cloud Project and BigQuery Dataset
+1. Set up a Google Cloud project and enable BigQuery.
+2. Create a BigQuery dataset and table to store the scraped data.
