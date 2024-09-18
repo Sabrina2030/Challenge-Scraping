@@ -48,7 +48,14 @@ Before running the project, ensure that you have the following tools installed:
 ### 2. Configure Google Cloud credentials
 Ensure that the service account credentials file is properly configured with BigQuery permissions and placed in the config/ folder.
 
-### 3. Docker Setup and Run
+### 3. Set the Credentials Path
+In the `Dockerfile`, you must add an environment variable that points to the path of your Google Cloud service account credentials.
+
+```dockerfile
+ENV GOOGLE_APPLICATION_CREDENTIALS="/app/config/challenge-435921-1d9158e1ebff.json"
+```
+
+### 4. Docker Setup and Run
 4.1. Build the Docker Image
 You can build the Docker image using the following command:
 
@@ -64,7 +71,7 @@ You can test the Docker container locally before deploying it to Cloud Run:
 docker run -p 8080:8080 scraping-news-image
 ```
 
-### 4. Deployment
+### 5. Deployment
 The project includes a deploy.sh script to automate the deployment process to Google Cloud Run.
 
 5.1. Run the Deployment Script:
@@ -107,7 +114,7 @@ Make sure to replace the placeholder "your_project.your_dataset.your_table" with
 
 For example, if your project is my-gcp-project, your dataset is news_data, and your table is scraped_articles, the table_id would look like this:
 
-```bash
+```py
 table_id = "my-gcp-project.news_data.scraped_articles"
 ```
 
