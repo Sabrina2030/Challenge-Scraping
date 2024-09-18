@@ -63,3 +63,59 @@ You can test the Docker container locally before deploying it to Cloud Run:
 ```bash
 docker run -p 8080:8080 scraping-news-image
 ```
+
+### 4. Deployment
+The project includes a deploy.sh script to automate the deployment process to Google Cloud Run.
+
+5.1. Run the Deployment Script:
+
+```bash
+bash bash-scripts/deploy.sh
+```
+
+This script will:
+
+- Build the Docker image
+- Push the image to Google Container Registry
+- Deploy the service to Google Cloud Run
+
+
+## Scripts Overview
+
+### scraper.py
+- This script uses Selenium to scrape news data from the Yogonet website.
+- Scrapes fields: Title, Kicker, Image, Link.
+- Saves the data into a structured format for post-processing.
+
+### post_process.py
+- Performs additional processing on the scraped data using Pandas.
+- Key metrics include:
+    - Word count in the title
+    - Character count in the title
+    - List of capitalized words in the title.
+
+### bigquery_integration.py
+- Handles the insertion of processed data into Google BigQuery.
+- Connects using Google service account credentials.
+
+## Important:
+Make sure to replace the placeholder "your_project.your_dataset.your_table" with your actual project, dataset, and table names in BigQuery. Here's how:
+
+- your_project: Replace this with your Google Cloud Project ID.
+- your_dataset: Replace this with the name of the dataset in BigQuery where you want to store the data.
+- your_table: Replace this with the name of the table inside the dataset where the data will be inserted.
+
+For example, if your project is my-gcp-project, your dataset is news_data, and your table is scraped_articles, the table_id would look like this:
+
+```bash
+table_id = "my-gcp-project.news_data.scraped_articles"
+```
+
+### deploy.sh
+Automates Docker build, image push to Google Container Registry, and deployment to Google Cloud Run.
+
+
+## Additional Information
+- Docker Image: The project is fully Dockerized for easy deployment. Ensure that Docker is properly installed and configured on your system.
+- Google Cloud Run Deployment: The service can be deployed on Google Cloud Run with scalable memory and CPU options.
+- Service Credentials: Ensure the correct setup of your Google Cloud credentials to allow BigQuery integration.
