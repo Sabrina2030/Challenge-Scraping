@@ -98,7 +98,7 @@ This script will:
 - Handles the insertion of processed data into Google BigQuery.
 - Connects using Google service account credentials.
 
-## Important:
+#### Important:
 Make sure to replace the placeholder "your_project.your_dataset.your_table" with your actual project, dataset, and table names in BigQuery. Here's how:
 
 - your_project: Replace this with your Google Cloud Project ID.
