@@ -50,4 +50,13 @@ gcloud run deploy $SERVICE_NAME \
     --set-env-vars GOOGLE_APPLICATION_CREDENTIALS="$CREDENTIALS_PATH" \
     --allow-unauthenticated
 
+#opcion 2: Desplegar con credenciales alojadas en GCP
+#gcloud run deploy $SERVICE_NAME \
+#    --image gcr.io/$PROJECT_ID/$IMAGE_NAME \
+#    --platform managed \
+#    --region $REGION \
+#    --memory 1Gi \
+#    --set-secrets GOOGLE_APPLICATION_CREDENTIALS=projects/$PROJECT_ID/secrets/GOOGLE_CREDENTIALS_SECRET/versions/latest \
+#    --allow-unauthenticated
+
 echo "Despliegue completado. Verifica el estado del servicio en Google Cloud Run."
